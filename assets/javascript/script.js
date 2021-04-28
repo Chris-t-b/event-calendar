@@ -1,5 +1,37 @@
 var dayPlanner = []
 
+for (time = 9; time <= 17; time++) {
+    var id = time - 9
+    var dataPlanner = ""
+
+   var displayHour = 0;
+   var ampm = "";
+
+
+    if (time === 12) {
+        displayHour = 12
+        ampm = "pm"
+    } else if (time > 12) { 
+       displayHour = time - 12;
+       ampm = "pm";
+   } else if (time < 12) {
+       displayHour = time;
+       ampm = "am";
+   }
+
+   displayHour = displayHour.toString()
+
+   dataPlanner = {
+       id: id,
+       displayHour: displayHour,
+       time: time,
+       ampm: ampm,
+       dataPlanner: dataPlanner
+   }
+
+   dayPlanner.push(dataPlanner)
+
+}
  
 function getCurrentDate() {
     var currentDate = moment().format('dddd, MMMM Do');
